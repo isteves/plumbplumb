@@ -1,6 +1,10 @@
+---
+output: github_document
+---
+
 # Iterating with plumber
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -14,7 +18,7 @@ Getting your plumber API up and running takes a bit of fiddling around. Rather t
 
 If you have ready-built plumber functions, you can use test them out directly in a single RStudio session by opening up a new terminal with `start_plumber`. I've included a two functions (`random_praise` and `random_data`) in a sample plumber file in the `inst` folder of this repo. Depending on what seed you set, the output changes:
 
-```{r echo = FALSE}
+```{r eval = FALSE}
 # devtools::install_github("isteves/plumbplumb")
 library(plumbplumb) 
 
@@ -30,7 +34,7 @@ httr::content(foo, as = "text")
 
 Same with the data:
 
-```{r}
+```{r eval = FALSE}
 baz <- httr::GET("http://127.0.0.1:8484/random_data?seed=2")
 httr::content(baz)
 
