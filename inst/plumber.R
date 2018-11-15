@@ -1,5 +1,5 @@
 #* Download random praise
-#* @serializer html
+#* @serializer unboxedJSON
 #* @param seed:numeric
 #* @get /random_praise
 function(seed){

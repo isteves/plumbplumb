@@ -10,7 +10,8 @@ check_output <- function(trml, cmd_snippet) {
         count <- count + 1
     }
     if(length(line_cmd) == 0) stop("Check terminal")
-    msg <- result[seq(tail(line_cmd, 1), length(result))]
+    msg <- result[seq(utils::tail(line_cmd, 1),
+                      length(result))]
     message(paste(msg, collapse = "\n"))
     invisible(msg)
 }
@@ -20,7 +21,7 @@ check_output <- function(trml, cmd_snippet) {
 #' Runs a plumber API in a new terminal for interactive testing.
 #'
 #' @param path Path to the plumber file
-#' @param port Port, defaults to 8484
+#' @param port Port
 #'
 #' @import rlang
 #' @import rstudioapi
@@ -28,7 +29,7 @@ check_output <- function(trml, cmd_snippet) {
 #'
 #' @export
 
-start_plumber <- function(path = "R/plumber.R", port = 8484) {
+start_plumber <- function(path, port) {
     stopifnot(is.character(path))
     stopifnot(is.character(port)|is.numeric(port))
 

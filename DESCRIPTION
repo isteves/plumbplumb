@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "email@email.com")
 Description: Iterate more quickly with plumber by testing it in a new terminal window.
-License: What license it uses
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: glue,
