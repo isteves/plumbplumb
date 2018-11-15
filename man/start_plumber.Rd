@@ -4,12 +4,12 @@
 \alias{start_plumber}
 \title{Start plumber}
 \usage{
-start_plumber(path = "R/plumber.R", port = 8484)
+start_plumber(path, port)
 }
 \arguments{
 \item{path}{Path to the plumber file}
 
-\item{port}{Port, defaults to 8484}
+\item{port}{Port}
 }
 \description{
 Runs a plumber API in a new terminal for interactive testing.

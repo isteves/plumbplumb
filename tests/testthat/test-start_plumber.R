@@ -1,5 +1,6 @@
 context("test-start_plumber")
 
+skip_if_not(interactive(), "Tests skipped. Please test interactively.")
 test_that("README examples work", {
     plumber_path <- system.file("plumber.R", package = "plumbplumb")
     trml <- start_plumber(plumber_path, 8484)
