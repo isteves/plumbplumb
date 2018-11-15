@@ -20,23 +20,25 @@ repo. Depending on what seed you set, the output changes:
 ``` r
 # devtools::install_github("isteves/plumbplumb")
 library(plumbplumb) 
+library(httr)
 
 plumber_path <- system.file("plumber.R", package = "plumbplumb")
-start_plumber(plumber_path, port = 8484)
+port <- 8484
+start_plumber(plumber_path, port)
 
-bar <- httr::GET("http://127.0.0.1:8484/random_praise?seed=2")
-httr::content(bar, as = "text")
+bar <- GET(glue::glue("http://127.0.0.1:{port}/random_praise?seed=2"))
+content(bar)
 
-foo <- httr::GET("http://127.0.0.1:8484/random_praise?seed=3")
-httr::content(foo, as = "text")
+foo <- GET(glue::glue("http://127.0.0.1:{port}/random_praise?seed=3"))
+content(foo)
 ```
 
 Same with the data:
 
 ``` r
-baz <- httr::GET("http://127.0.0.1:8484/random_data?seed=2")
-httr::content(baz)
+baz <- GET(glue::glue("http://127.0.0.1:{port}/random_data?seed=2"))
+content(baz)
 
-boo <- httr::GET("http://127.0.0.1:8484/random_data?seed=3")
-httr::content(boo)
+boo <- GET(glue::glue("http://127.0.0.1:{port}/random_data?seed=3"))
+content(boo)
 ```
