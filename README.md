@@ -11,6 +11,8 @@ manually, you can use the following workflow:
 4.  Fiddle with your plumber function if something is off
 5.  Repeat 2-4 until you get it right\!
 
+![](inst/plumber_2term_lab.png)
+
 If you have ready-built plumber functions, you can use test them out
 directly in a single RStudio session by opening up a new terminal with
 `start_plumber`. I’ve included a two functions (`random_praise` and
